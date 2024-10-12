@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>fe129ffb-6ac4-43f0-82d3-9eca3f20f188</UserSecretsId>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CsvHelper" Version="33.0.1" />
+        <PackageReference Include="Grpc.AspNetCore" Version="2.65.0" />
+        <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.9" />
+        <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="13.9.9" />
+        <PackageReference Include="HotChocolate.Data.EntityFramework" Version="13.9.9" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.7" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.7" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.7" />
+        <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.7" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+        <PackageReference Include="Pomelo.Extensions.Caching.MySql" Version="2.2.0" />
+        <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+        <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
+        <PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
+        <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+        <PackageReference Include="Serilog.Sinks.MySQL" Version="5.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.7.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.6.2" />
+        <PackageReference Include="System.Linq.Dynamic.Core" Version="1.4.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="bgg_dataset.csv" />
+    </ItemGroup>
+    <ItemGroup>
+        <Protobuf Include="gRPC/grpc.proto" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Update="Data\bgg_dataset.csv">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+</Project>
